@@ -1,0 +1,31 @@
+(tricksts) tricksts@ge-d1 ex04 % python3 -m cProfile -s ncalls financial_enhanced.py 'MSFT' 'Total Revenue' > profiling-ncalls.txt
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/local/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/usr/local/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/cProfile.py", line 190, in <module>
+    main()
+  File "/usr/local/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/cProfile.py", line 179, in main
+    runctx(code, globs, None, options.outfile, options.sort)
+  File "/usr/local/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/cProfile.py", line 19, in runctx
+    return _pyprofile._Utils(Profile).runctx(statement, globals, locals,
+  File "/usr/local/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/profile.py", line 62, in runctx
+    prof.runctx(statement, globals, locals)
+  File "/usr/local/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/cProfile.py", line 100, in runctx
+    exec(cmd, globals, locals)
+  File "financial_enhanced.py", line 41, in <module>
+    main()
+  File "financial_enhanced.py", line 38, in main
+    print(get_data(ticker, field))
+  File "financial_enhanced.py", line 11, in get_data
+    response.html.render(sleep=2)
+  File "/Users/tricksts/DSB4_Package_management.ID_1577671-1/src/ex02/tricksts/lib/python3.10/site-packages/requests_html.py", line 598, in render
+    content, result, page = self.session.loop.run_until_complete(self._async_render(url=self.url, script=script, sleep=sleep, wait=wait, content=self.html, reload=reload, scrolldown=scrolldown, timeout=timeout, keep_page=keep_page))
+  File "/usr/local/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 641, in run_until_complete
+    return future.result()
+  File "/Users/tricksts/DSB4_Package_management.ID_1577671-1/src/ex02/tricksts/lib/python3.10/site-packages/requests_html.py", line 512, in _async_render
+    await page.goto(url, options={'timeout': int(timeout * 1000)})
+  File "/Users/tricksts/DSB4_Package_management.ID_1577671-1/src/ex02/tricksts/lib/python3.10/site-packages/pyppeteer/page.py", line 838, in goto
+    raise error
+pyppeteer.errors.TimeoutError: Navigation Timeout Exceeded: 8000 ms exceeded.

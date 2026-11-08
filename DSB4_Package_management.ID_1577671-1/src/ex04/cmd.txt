@@ -1,0 +1,2 @@
+python -m cProfile -s tottime financial.py 'MSFT' 'Total Revenue' > profiling-sleep.txt
+python3 financial.py 'MSFT' 'Total Revenue' 
